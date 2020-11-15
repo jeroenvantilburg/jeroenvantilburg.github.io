@@ -17,6 +17,6 @@ Link naar de webapp [Online systeembord](https://jeroenvantilburg.nl/systeembord
 
 ### Whiteboard
 
-[![Webapp screenshot](https://jeroenvantilburg.github.io/whiteboard/screenshot.png)](https://jeroenvantilburg.github.io/whiteboard)
+[![Webapp screenshot](https://jeroenvantilburg.github.io/whiteboard/img/screenshot.png)](https://jeroenvantilburg.github.io/whiteboard)
 
 Link naar de webapp [Whiteboard](https://jeroenvantilburg.nl/whiteboard).
