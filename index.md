@@ -14,3 +14,9 @@ title: Jeroen van Tilburg
 [![Webapp screenshot](https://jeroenvantilburg.github.io/systeembord/screenshot.png)](https://jeroenvantilburg.github.io/systeembord)
 
 Link naar de webapp [Online systeembord](https://jeroenvantilburg.nl/systeembord).
+
+### Whiteboard
+
+[![Webapp screenshot](https://jeroenvantilburg.github.io/whiteboard/screenshot.png)](https://jeroenvantilburg.github.io/whiteboard)
+
+Link naar de webapp [Whiteboard](https://jeroenvantilburg.nl/whiteboard).
