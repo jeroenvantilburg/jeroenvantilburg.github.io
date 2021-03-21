@@ -9,14 +9,21 @@ layout: home
 title: Jeroen van Tilburg
 ---
 
+### Motion Ticker
+
+[![Webapp screenshot](https://jeroenvantilburg.nl/motionticker/img/screenshot.png)](https://jeroenvantilburg.nl/motionticker)
+
+Link to the webapp [Motion Ticker](https://jeroenvantilburg.nl/motionticker).
+
+
 ### Online systeembord
 
-[![Webapp screenshot](https://jeroenvantilburg.github.io/systeembord/screenshot.png)](https://jeroenvantilburg.github.io/systeembord)
+[![Webapp screenshot](https://jeroenvantilburg.nl/systeembord/screenshot.png)](https://jeroenvantilburg.nl/systeembord)
 
 Link naar de webapp [Online systeembord](https://jeroenvantilburg.nl/systeembord).
 
 ### Whiteboard
 
-[![Webapp screenshot](https://jeroenvantilburg.github.io/whiteboard/img/screenshot.png)](https://jeroenvantilburg.github.io/whiteboard)
+[![Webapp screenshot](https://jeroenvantilburg.nl/whiteboard/img/screenshot.png)](https://jeroenvantilburg.nl/whiteboard)
 
 Link naar de webapp [Whiteboard](https://jeroenvantilburg.nl/whiteboard).
