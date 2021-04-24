@@ -4,7 +4,7 @@ title: Over
 permalink: /about/
 ---
 
-<img src="img/pasfoto.jpg" alt="pasfoto" width="150" align="right" />
+<img src="https://jeroenvantilburg.nl/img/pasfoto.jpg" alt="pasfoto" width="150" align="right" />
 <p>
 Docent natuurkunde Goois Lyceum.
 
