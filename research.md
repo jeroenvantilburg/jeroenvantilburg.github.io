@@ -78,7 +78,7 @@ on <a href="https://inspirehep.net/authors/1070629">Inspire</a> and <a href="htt
 #### Peer-reviewed articles
 <p>
       <ul>
-                  <li> LHCb collaboration, <i>Measurement of D<sub>s</sub><sup>&pm;</sup> production asymmetry in pp collisions at &Sqrt;s=7 and 8 TeV</i>, <a href="https://arxiv.org/abs/1805.09869">JHEP 08 (2018) 008</a>.
+                  <!--li> LHCb collaboration, <i>Measurement of D<sub>s</sub><sup>&pm;</sup> production asymmetry in pp collisions at &Sqrt;s=7 and 8 TeV</i>, <a href="https://arxiv.org/abs/1805.09869">JHEP 08 (2018) 008</a>.
                   <li>LHCb OT group, <i>Improved performance of the LHCb Outer Tracker in LHC Run 2</i>, <a href="https://arxiv.org/abs/1708.00819">J. Instrum. 12 (2017) P11016</a>.
                   <li>LHCb collaboration, <i>Measurement of CP violation in B<sup>0</sup>&rarr;J/&psi;K<sub>S</sub> and B0&rarr;&psi;(2S)K<sub>S</sub> decays</i>, <a href="https://arxiv.org/abs/1709.03944">JHEP 11 (2017) 170</a>.
                   <li>LHCb collaboration, <i>Measurement of the CP asymmetry in B<sub>s</sub> mixing</i>, <a href="http://arxiv.org/abs/1605.09768">Phys. Rev. Lett. 117 (2016) 061803</a>.
@@ -87,15 +87,15 @@ on <a href="https://inspirehep.net/authors/1070629">Inspire</a> and <a href="htt
                   <li>LHCb collaboration, <i>A precise measurement of the B<sup>0</sup> meson oscillation frequency</i>, <a href="https://cds.cern.ch/record/2038142">LHCb-CONF-2015-003</a> and <a href="http://arxiv.org/abs/1604.03475">EPJC 76 (2016) 1</a>.</li>
                   <li>LHCb collaboration, <i>Measurement of CP violation in B<sup>0</sup>&rarr;J/&psi;K<sub>S</sub></i>, <a href="https://arxiv.org/abs/1503.07089">Phys. Rev. Lett. 115 (2015) 031601</a>.
                   <li>LHCb collaboration, <i>Measurement of indirect CP asymmetries in D<sup>0</sup>&rarr;KK and D<sup>0</sup>&rarr;&pi;&pi; decays</i>, <a href="http://arxiv.org/abs/1501.06777">JHEP 04 (2015) 043</a>.</li>
-                  <li>LHCb collaboration, <i>LHCb detector performance</i>, <a href="http://arxiv.org/abs/1412.6352">Int. J. Mod. Phys. A 30, 1530022 (2015)</a>.</li>
-                  <!--li>LHCb collaboration, <i>Measurement of the semileptonic CP asymmetry in B<sup>0</sup>–B<sup>0</sup> mixing</i>, <a href="http://arxiv.org/abs/1409.8586">Phys. Rev. Lett. 114 (2015) 041601</a>.</li>
+                  <li>LHCb collaboration, <i>LHCb detector performance</i>, <a href="http://arxiv.org/abs/1412.6352">Int. J. Mod. Phys. A 30, 1530022 (2015)</a>.</li-->
+                  <li>LHCb collaboration, <i>Measurement of the semileptonic CP asymmetry in B<sup>0</sup>–B<sup>0</sup> mixing</i>, <a href="http://arxiv.org/abs/1409.8586">Phys. Rev. Lett. 114 (2015) 041601</a>.</li>
                   <li>J. van Tilburg and M. van Veghel, <i>Status and prospects for CPT and Lorentz invariance violation searches in neutral meson mixing</i>, <a href="http://arxiv.org/abs/1407.1269">Phys. Lett B742 (2015) 236</a>.</li>
                   <li>LHCb collaboration, <i>Measurement of the track reconstruction efficiency at LHCb</i>, <a href="http://arxiv.org/abs/1408.1251">JINST 10 (2015) P02007</a></li>
                    <li>LHCb collaboration, <i>Measurement of CP asymmetry in D<sup>0</sup>&rarr;KK and D<sup>0</sup>&rarr;&pi;&pi; decays</i>, <a href="http://arxiv.org/abs/1405.2797">JHEP 07 (2014) 014</a>.</li>
                   <li>LHCb VELO Group, <i>Performance of the LHCb vertex locator</i>, <a href="http://arxiv.org/abs/1405.7808">JINST 9 (2014) P09007</a>.</li>
                   <li>LHCb collaboration, <i>Search for direct CP violation in D<sup>0</sup>&rarr;h<sup>−</sup>h<sup>+</sup> modes using semileptonic B decays</i>, <a href="http://arxiv.org/abs/1303.2614">Phys. Lett. B 723 (2013) 33-43</a></li>
                 <li>LHCb collaboration, <i>Search for the rare decays B<sub>s</sub>&rarr;&mu;&mu; and B<sub>d</sub>&rarr;&mu;&mu;</i>, <a href="http://arxiv.org/abs/1103.2465">Phys.Lett. B 699 (2011) 330-340</a>.</li>
-                          <li>LHCb collaboration, <i>The LHCb Detector at the LHC</i>, <a href="http://dx.doi.org/10.1088/1748-0221/3/08/S08005">JINST 3 (2008) S08005</a>.</li-->
+                          <li>LHCb collaboration, <i>The LHCb Detector at the LHC</i>, <a href="http://dx.doi.org/10.1088/1748-0221/3/08/S08005">JINST 3 (2008) S08005</a>.</li>
 
 </ul>
 </p>
