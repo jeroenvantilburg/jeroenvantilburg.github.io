@@ -18,8 +18,7 @@ between <a href="http://lhcb-public.web.cern.ch/lhcb-public/en/Physics/Antimatte
 If these measurements show small deviations from their 
 predictions, this could be a sign of new, yet unknown particles
 that influence these measurements. In this approach, we hope to find out more about the physics that governs our Universe.
-This research was awarded a
-<a href="http://www.nwo.nl/en/funding/our-funding-instruments/nwo/innovational-research-incentives-scheme/vidi/index.html">Vidi</a> research grant in 2013. 
+This research was awarded an NWO Vidi research grant in 2013. 
 It was carried out between 2013 and 2018 at <a href="https://www.nikhef.nl">Nikhef</a> using the <a href="http://lhcb-public.web.cern.ch/lhcb-public/">LHCb</a> detector at the 
 <a href="http://lhc.web.cern.ch/lhc/">Large Hadron Collider </a> at <a href="http://public.web.cern.ch/public/">CERN</a>.
 </p>
