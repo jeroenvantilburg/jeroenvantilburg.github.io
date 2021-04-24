@@ -11,14 +11,14 @@ title: Jeroen van Tilburg
 
 ### Motion Ticker
 
-[![Webapp screenshot](https://jeroenvantilburg.nl/motionticker/img/screenshot.png)](https://jeroenvantilburg.nl/motionticker)
+<a href="https://jeroenvantilburg.nl/motionticker"><img src="https://jeroenvantilburg.nl/motionticker/img/screenshot.png" alt="Screenshot Motion Ticker" width="600"/></a>
 
 Link to the webapp [Motion Ticker](https://jeroenvantilburg.nl/motionticker).
 
 
 ### Online systeembord
 
-[![Webapp screenshot](https://jeroenvantilburg.nl/systeembord/screenshot.png)](https://jeroenvantilburg.nl/systeembord)
+<a href="https://jeroenvantilburg.nl/systeembord"><img src="https://jeroenvantilburg.nl/systeembord/screenshot.png" alt="Screenshot Systeembord" width="600"/></a>
 
 Link naar de webapp [Online systeembord](https://jeroenvantilburg.nl/systeembord).
 
