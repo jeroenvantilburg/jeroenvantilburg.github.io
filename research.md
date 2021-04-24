@@ -96,7 +96,7 @@ on <a href="https://inspirehep.net/authors/1070629">Inspire</a> and <a href="htt
                   <li>LHCb collaboration, <i>Search for direct CP violation in D<sup>0</sup>&rarr;h<sup>−</sup>h<sup>+</sup> modes using semileptonic B decays</i>, <a href="http://arxiv.org/abs/1303.2614">Phys. Lett. B 723 (2013) 33-43</a></li>
                 <li>LHCb collaboration, <i>Search for the rare decays B<sub>s</sub>&rarr;&mu;&mu; and B<sub>d</sub>&rarr;&mu;&mu;</i>, <a href="http://arxiv.org/abs/1103.2465">Phys.Lett. B 699 (2011) 330-340</a>.</li>
                           <li>LHCb collaboration, <i>The LHCb Detector at the LHC</i>, <a href="http://dx.doi.org/10.1088/1748-0221/3/08/S08005">JINST 3 (2008) S08005</a>.</li>
-          </ul>
+</ul>
 </p>
 
 
