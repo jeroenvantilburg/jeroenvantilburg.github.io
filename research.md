@@ -3,7 +3,6 @@ layout: page
 title: Research
 permalink: /research/
 ---
-## Research
 <img src="/img/balance.png" width="200" align="right" alt=""/>
 <p>
   <i>Why is our Universe made of matter and not of antimatter?</i>
