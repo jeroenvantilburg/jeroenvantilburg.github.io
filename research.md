@@ -78,8 +78,8 @@ on <a href="https://inspirehep.net/authors/1070629">Inspire</a> and <a href="htt
 #### Peer-reviewed articles
 <p>
       <ul>
-                  <!--li> LHCb collaboration, <i>Measurement of D<sub>s</sub><sup>&pm;</sup> production asymmetry in pp collisions at &Sqrt;s=7 and 8 TeV</i>, <a href="https://arxiv.org/abs/1805.09869">JHEP 08 (2018) 008</a>.</li>
-                  <li>LHCb OT group, <i>Improved performance of the LHCb Outer Tracker in LHC Run 2</i>, <a href="https://arxiv.org/abs/1708.00819">J. Instrum. 12 (2017) P11016</a>.</li-->
+                  <li> LHCb collaboration, <i>Measurement of D<sub>s</sub><sup>&pm;</sup> production asymmetry in pp collisions at &Sqrt;s=7 and 8 TeV</i>, <a href="https://arxiv.org/abs/1805.09869">JHEP 08 (2018) 008</a>.</li>
+                  <li>LHCb OT group, <i>Improved performance of the LHCb Outer Tracker in LHC Run 2</i>, <a href="https://arxiv.org/abs/1708.00819">J. Instrum. 12 (2017) P11016</a>.</li>
                   <li>LHCb collaboration, <i>Measurement of CP violation in B<sup>0</sup>&rarr;J/&psi;K<sub>S</sub> and B0&rarr;&psi;(2S)K<sub>S</sub> decays</i>, <a href="https://arxiv.org/abs/1709.03944">JHEP 11 (2017) 170</a>.</li>
                   <li>LHCb collaboration, <i>Measurement of the CP asymmetry in B<sub>s</sub> mixing</i>, <a href="http://arxiv.org/abs/1605.09768">Phys. Rev. Lett. 117 (2016) 061803</a>.</li>
                   <li>LHCb collaboration, <i>Search for violations of Lorentz invariance and CPT symmetry in B<sup>0</sup><sub>(s)</sub> mixing</i>, <a href="http://arxiv.org/abs/1603.04804">Phys. Rev. Lett. 116 (2016) 241601</a>.</li>
