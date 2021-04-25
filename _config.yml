@@ -20,9 +20,9 @@ header_pages:
 
 minima:
   social_links:
-    github: jeroenvantilburg
-    facebook: jeroen.vantilburg.52
-    linkedin: jeroen-van-tilburg-8b087870
+    github: "jeroenvantilburg"
+    facebook: "jeroen.vantilburg.52"
+    linkedin: "jeroen-van-tilburg-8b087870"
 
 # Build settings
 theme: minima
