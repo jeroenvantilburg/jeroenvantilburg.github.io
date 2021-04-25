@@ -30,6 +30,7 @@
 
     <div class="social-links">
       .. {{site.minima.social_links}} ..
+      {%- if site.minima.social_links.facebook -%}{{ site.minima.social_links.facebook | cgi_escape | escape }} {%- endif -%}
       {%- include social.html -%}
     </div>
 
