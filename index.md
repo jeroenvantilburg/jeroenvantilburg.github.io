@@ -9,7 +9,7 @@ layout: home
 title: Jeroen van Tilburg
 ---
 
-# Webapps voor voor in de klas.
+# Webapps voor in de klas.
 
 ## Motion Ticker
 
