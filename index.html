@@ -57,7 +57,7 @@
       let name = "smackjvantilburgsmack"; // add salt
       name = name.substr(5,11); // remove salt
       let domain = "gmail.com";
-      document.getElementById("mail").href="mailto:"+ name + "@"+ domain;
+      document.getElementById("mail").setAttribute("href","mailto:"+ name + "@"+ domain);
       return false;
     }  
   </script>
