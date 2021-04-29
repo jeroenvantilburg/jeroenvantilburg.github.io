@@ -66,13 +66,12 @@ body * {
 
 .social {
   margin: 10px 0px 0px 10px; 
-  font-size: 1.2em;
 }
 
 .social a {
   display: inline;
   color: black;
-  padding: 16px;
+  padding: 6px;
   font-weight: bold;
 }
 

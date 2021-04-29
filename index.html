@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ontouchstart lang="nl">
+<html ontouchstart lang="nl"> <!-- ontouchstart needed for iOS -->
 <head>
   <title>Jeroen van Tilburg</title>
   <meta charset="utf-8">
@@ -38,15 +38,32 @@
           <a href="https://www.facebook.com/jeroen.vantilburg.52">
             <i class="fa fa-facebook"></i>
           </a>
+          <a href="https://www.linkedin.com/in/jeroen-van-tilburg-8b087870">
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCV_uv8iWk3WvKNbIuCN1g2g">
+            <i class="fa fa-youtube-play"></i>
+          </a>
           <a href="https://github.com/jeroenvantilburg">
             <i class="fa fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/jeroen-van-tilburg-8b087870">
-            <i class="fa fa-linkedin"></i>
+          <a onclick="envelope()">
+            <i class="fa fa-envelope-open"></i>
           </a>
         </div>
       </div>
     </div>
+<script>
+function envelope() {
+  let name = "smackjvantilburgsmack"; // add salt
+  name = name.substr(5,11); // remove salt
+  let domain = "gmail.com";
+  //alert("mailto:"+ name "@"+ domain );
+  location.href="mailto:"+ name + "@"+ domain;
+}  
+</script>
+<script data-goatcounter="https://jeroenvantilburg.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>  
   
     <div class="content">
       
