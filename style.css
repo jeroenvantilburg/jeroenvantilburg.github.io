@@ -29,6 +29,7 @@ body * {
   display: flex;
   flex-direction: column;
   color: rgb(20,89,153);
+  height: 50px;
 }
 
 .header .logo {
@@ -47,7 +48,7 @@ body * {
   flex: 0;  
   margin: auto;
   display: none;
-  font-size: 1.5em;
+  font-size: 1.7em;
   padding-right: 10px;
 }
 
@@ -120,10 +121,11 @@ body * {
     height: auto;
     position: relative;
   }
-  .header img {height: 30px; }
+  .header img {height: 40px; }
   .header { flex-direction: row; }
   .links { display: none; }
   .content { margin-left: 0; }
   .header .menu { display: block; }
+  .box-item {  width: 250px; }
 
 }
