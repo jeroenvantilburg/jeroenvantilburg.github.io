@@ -46,7 +46,7 @@
         <a href="https://github.com/jeroenvantilburg">
           <i class="fa fa-github"></i>
         </a>
-        <a onclick="envelope()">
+        <a onclick="envelope()" href="#" id="mail">
           <i class="fa fa-envelope-open"></i>
         </a>
       </div>
@@ -57,7 +57,8 @@
       let name = "smackjvantilburgsmack"; // add salt
       name = name.substr(5,11); // remove salt
       let domain = "gmail.com";
-      location.href="mailto:"+ name + "@"+ domain;
+      document.getElementById("mail").href="mailto:"+ name + "@"+ domain;
+      return false;
     }  
   </script>
   <script data-goatcounter="https://jeroenvantilburg.goatcounter.com/count"
