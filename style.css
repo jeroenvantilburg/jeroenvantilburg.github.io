@@ -64,6 +64,10 @@ body * {
   color: white;
 }
 
+.links .current {
+  background-color: #bbb;
+}
+
 .social {
   margin: 10px 0px 0px 10px; 
 }
