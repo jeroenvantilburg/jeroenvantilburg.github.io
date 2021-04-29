@@ -89,6 +89,10 @@ body * {
   min-height: 100vh;
 }
 
+.content p {
+  max-width: 600px;
+}
+
 .box-item {
   background-color: white;
   float: left;
