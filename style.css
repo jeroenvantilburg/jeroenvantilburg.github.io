@@ -47,6 +47,11 @@ body * {
   padding-right: 10px;
 }
 
+.links { 
+  margin-top: 30px; 
+  z-index: 1;
+}
+
 .links a {
   display: block;
   color: black;
@@ -57,10 +62,6 @@ body * {
 .links a:hover {
   background-color: #555;
   color: white;
-}
-
-.links { 
-  margin-top: 30px; 
 }
 
 .social {
@@ -112,7 +113,7 @@ body * {
 .content > img {max-width: 400px;}
 
 @media screen and (max-width: 700px) {
-  .sidebar { width: 100%; height: auto; position: relative; }
+  .sidebar { width: 100%; position: relative; }
   .links { display: none; }
   .sidebar:hover .links { display: block; }
   .header img {height: 40px; }
