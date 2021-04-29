@@ -20,16 +20,11 @@ body * {
   overflow: auto;
 }
 
-.sidebar:hover .links {
-  display: block;
-}
-
 .header {
   text-align: center;
   display: flex;
   flex-direction: column;
   color: rgb(20,89,153);
-  height: 50px;
 }
 
 .header .logo {
@@ -98,7 +93,7 @@ body * {
   float: left;
   margin: 20px;
   padding: 10px; 
-  width: 400px;
+  max-width: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -114,18 +109,16 @@ body * {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.content > img {max-width: 400px;}
 
 @media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .header img {height: 40px; }
-  .header { flex-direction: row; }
+  .sidebar { width: 100%; height: auto; position: relative; }
   .links { display: none; }
-  .content { margin-left: 0; }
+  .sidebar:hover .links { display: block; }
+  .header img {height: 40px; }
+  .header { flex-direction: row; height: 50px; }
   .header .menu { display: block; }
-  .box-item {  width: 250px; }
-
+  .content { margin-left: 0; }
+  .content > img {max-width: 250px;}
+  .box-item { max-width: 220px; width: 75vw; }
 }
