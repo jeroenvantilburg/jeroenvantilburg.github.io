@@ -30,7 +30,7 @@
     </div>
       
     <div class="links">
-      <a class="current" href="about.html">Over</a>
+      <a href="about.html">Over</a>
       <a href="index.html">Web apps</a>
       <div class="social">
         <img src="img/pasfoto_rect.png" class="picture" alt="pasfoto"/></img>
@@ -136,13 +136,13 @@ There is a red control LED on the camera PCB to indicate that the camera is on. 
 
 <h3>IR LED</h3>
 <p>
-This camera also comes with two infrared LED lights that can be mounted on each side of the camera. Without these IR lights the pictures from the camera would still be dark. These two lights would be great in case you want to build your own security camera, however, they are quite an overkill for a birdhouse. Moreover, they actually spill some light into the visible spectrum, which you can see as a faint red light when the lights are on. In addition, they get hot and drain the battery.
+This camera also comes with two infrared LED lights that can be mounted on each side of the camera. Without these IR lights the pictures from the camera would still be dark. These two lights would be great in case you want to build your own security camera, however, they are quite an overkill for a birdhouse. Moreover, they actually spill some light into the visible spectrum, which you can see as a faint red light when the lights are on. In addition, they get hot and drain the battery, drawing about 350 mA of current each (<a href="https://www.raspberrypi.org/forums/viewtopic.php?p=1366913#p1366913">link</a>).
 </p>
 <p>
-Instead I took an old remote control and removed the IR LED. These 5 mm LEDs are ideal for our purposes. Obviously you can also buy a new one for just a few cents. An advantage of a new LED is that you know that the longer leg is the anode. When extracting an LED from a used PCB, you do not know this anymore, however, the “flag” side is usually the cathode (see this <a href="https://core-electronics.com.au/tutorials/all-about-leds.html">link</a>). Since I am not using the standard IR LEDs, I now have two 3,3 V supply solder pads on each side of the camera to which I can connect the LED. You can use the back side of the standard IR LEDs to identify the positive and negative side or use a voltmeter.
+Instead I took an old remote control and removed the IR LED. These 5 mm LEDs are ideal for our purposes. Obviously you can also buy a new one for just a few cents. An advantage of a new LED is that you know that the longer leg is the anode. When extracting an LED from a used PCB, you do not know this anymore, however, the “flag” side is usually the cathode (see this <a href="https://core-electronics.com.au/tutorials/all-about-leds.html">link</a>). Since I am not using the standard IR LEDs, I now have two 3.3 V supply solder pads on each side of the camera to which I can connect the LED. You can use the back side of the standard IR LEDs to identify the positive and negative side or use a voltmeter.
 </p>
 <p>
-Do not connect the LED directly to the 3,3 V power lines, since you will burn your LED very quickly. These LEDs normally operate at a voltage below 2 V. Therefore the LED needs to be connected in series with a resistor. When using a 220 Ohm resistor, the voltage on the LED is 1,15 V and the current is 9,0 mA. This means that the total power dissipated by the LED and resistor is 9,0 times 1,15 equals 30 mW. This is not a lot, but keep in mind that this light is always on (as soon as the RPi is connected to power) and cannot be switch off without an additional cable from the RPi to the camera. The amount of light it produces is still more than sufficient for a birdhouse. I soldered the LED plus resistor to the solder pads on the camera board.
+Do not connect the LED directly to the 3.3 V power lines, since you will burn your LED very quickly. These LEDs normally operate at a voltage below 2 V. Therefore the LED needs to be connected in series with a resistor. When using a 220 Ohm resistor, the voltage on the LED is 1.15 V and the current is 9,0 mA. This means that the total power dissipated by the LED and resistor is 9.0 times 3.3 equals 30 mW. This is not a lot, but keep in mind that this light is always on (as soon as the RPi is connected to power) and cannot be switch off without an additional cable from the RPi to the camera. The amount of light it produces is still more than sufficient for a birdhouse. I soldered the LED plus resistor to the solder pads on the camera board.
 </p>
 <img src="img/birdhouse/camera_with_led.jpg" alt="camera with led" />
 
