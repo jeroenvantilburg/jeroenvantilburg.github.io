@@ -2,7 +2,7 @@
 destinationDir = ""
 
 # Put the pages
-pagesList = ["about.html", "research.html" ]
+pagesList = ["about.html", "research.html", "birdhouse.html" ]
 
 # Open the index.html file
 indexfile = "index.html"

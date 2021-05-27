@@ -92,8 +92,19 @@ body * {
   min-height: 100vh;
 }
 
+.content h3,h4 {
+  max-width: 600px;
+  margin-bottom: 5px;
+}
+
 .content p {
   max-width: 600px;
+  margin: 5px;
+}
+
+.content ul {
+  max-width: 600px;
+  margin: 5px;
 }
 
 .box-item {
@@ -118,6 +129,15 @@ body * {
 }
 
 .content > img {max-width: 400px;}
+
+.command {
+  background: black;
+  color: #ccc;
+  font-family: monospace;  
+  line-height: 2;
+  margin: 5px;
+  max-width: 400px;
+}
 
 @media screen and (max-width: 700px) {
   .sidebar { width: 100%; position: relative; }

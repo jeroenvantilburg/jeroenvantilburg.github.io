@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html ontouchstart lang="nl"> <!-- ontouchstart needed for iOS -->
+<head>
+  <title>Jeroen van Tilburg</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jeroen van Tilburg"/>
+  <link rel="canonical" href="https://jeroenvantilburg.nl/"/>
+  <meta property="og:url" content="https://jeroenvantilburg.nl/"/>
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen,projection" />
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d6bb3">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#eeeeee">
+</head>
+
+<body>  
+  <div class="sidebar">
+    <div class="header">
+      <div class="logo"><img src="mstile-70x70.png" alt="logo"></img></div>
+      <div class="title">Jeroen van Tilburg</div>
+      <div class="menu"><i class="fa fa-bars"></i></div>    
+    </div>
+      
+    <div class="links">
+      <a class="current" href="about.html">Over</a>
+      <a href="index.html">Web apps</a>
+      <div class="social">
+        <img src="img/pasfoto_rect.png" class="picture" alt="pasfoto"/></img>
+        <a href="https://www.facebook.com/jeroen.vantilburg.52">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jeroen-van-tilburg-8b087870">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCV_uv8iWk3WvKNbIuCN1g2g">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://github.com/jeroenvantilburg">
+          <i class="fa fa-github"></i>
+        </a>
+        <a onclick="envelope()" href="#" id="mail">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function envelope() {
+      let name = "smackjvantilburgsmack"; // add salt
+      name = name.substr(5,11); // remove salt
+      let domain = "gmail.com";
+      document.getElementById("mail").setAttribute("href","mailto:"+ name + "@"+ domain);
+      return false;
+    }  
+  </script>
+  <script data-goatcounter="https://jeroenvantilburg.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>  
+
+<!-- ABOVE THIS LINE IS COPIED FROM index.html WITH buildPages.py. DO NOT MODIFY ABOVE THIS LINE -->
+  
+  <div class="content">  
+    <h1>My birdhouse webcam project</h1>
+    <p>
+      Last year we had a nest of great tits in our birdhouse. Hearing little birds tweeting we could hardly resist opening the box and having a look inside. Of course we didn’t since we did not want to disturb the birds. Therefore, this year I decided we needed to install a webcam in our birdhouse such that we could see the little ones grow without disturbing the nest.
+        
+    <h3>Hardware used</h3>
+    <p>
+    <ul>
+      <li>Raspberry Pi Model 2B (or any other model)</li>
+      <li>16GB MicroSDHC card
+      <li>WiFi USB dongle (not needed for the newer RPi models or when you use the ethernet connection)
+      <li>20 Ah Powerbank with a micro-USB connector/cable 
+      <li><a href="https://www.waveshare.com/product/RPi-Camera-F.htm">Waveshare RPi camera</a> with night vision and adjustable focus
+      <li>(Extra long) flex cable
+      <li>IR led
+      <li>220 Ohm resistor
+      <li>Optional: case for the Raspberry Pi
+    </ul>
+    And of course a birdhouse ;-)
+    </p>
+<h3>Tools</h3>
+<p>
+    <ul>
+      <li>Computer with SD-card slot</li>
+      <li>Soldering iron, screws, small screw drivers, some wood, etc</li>
+      <li>USB keyboard, HDMI cable and monitor (it is probably possible to setup the RPi via remote connection without these items, but they can be handy for the first steps).
+    </ul>
+</p>
+    
+<h3>Prepare the SD card</h3>
+<p>
+  The first step is to put the operating system, Raspberry Pi OS (used to be called Raspbian) on the SD card. You need a computer with an SD card reader for this step. A quick and easy way is to use the <a href="https://www.raspberrypi.org/software/operating-systems/">Raspberry Pi Imager</a>.
+</p>
+
+<h3>Boot the Raspberry Pi with the SD card</h3>
+<p>
+Place the SD card in the slot and connect the Pi to a power supply. For this step it is handy to connect an USB keyboard and a HDMI display to the RPi. When the Raspberry OS is up and running, you might want to enable WiFi access, SSH access, VNC access and enable the camera. All can be done via the settings menu in the RPi Desktop menu. Also it is advisable to change the default login password (you will be prompted if you don’t). In fact, before changing it I regularly lost the WiFi connection, which was fixed after I changed the default login password. Another odd feature is that the RPi did not want to boot when there is no display connected. This can be fixed by adding this line to /boot/config.txt:
+<pre class="command">
+   hdmi_force_hotplug=1
+</pre>
+After that you can disconnect the display, login with ssh and reboot with 
+<pre class="command">
+   sudo shutdown -h now
+</pre>
+</p>
+
+<h3>Connect the camera</h3>
+<p>
+<img src="img/birdhouse/camera.jpg" alt="camera" width="200" align="right"/>
+There are several camera’s available for the RPi. I chose the Waveshare RPi camera with night vision and adjustable focus (<a href="https://www.waveshare.com/product/RPi-Camera-F.htm">link</a>). The night vision means that this camera has no IR filter. Therefore the colors may look a bit odd in daylight, but the big advantage is that it becomes sensitive to infrared light (more on this later). The camera has an angle of view of 75 degrees. This is sufficiently wide for the birdhouse. This camera also has an adjustable focus, which means that can also produce sharp images when the object is very close (like in a birdhouse). The focal distance can be adjusted manually by rotating the focus ring. This is an advantage over the standard Raspberry Pi NoIR camera, where you first need to remove glue blobs before you can rotate the lens into focus as explained <a href="https://projects.raspberrypi.org/en/projects/infrared-bird-box/6">here</a>. The standard flex cable that comes with this camera is only about 15 cm long. In my setup the RPi is further away from the birdhouse, so I bought a 1 m long flex cable.
+</p>
+<img src="img/birdhouse/connect_camera.jpg" alt="connect camera"/>
+
+
+<h3>Turn the camera into a webcam</h3>
+<p>
+This section is extremely short due to the awesome <a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a>. When you install this software via the command line (i.e. via the terminal or in an ssh-session), it sets up a web server with which you can view and control the camera remotely from another device via a web page (within your network, or if you want also on the internet).
+</p>
+<img src="img/birdhouse/test_camera.jpg" alt="test the camera" />
+
+<h3>Camera control LED</h3>
+<p>
+There is a red control LED on the camera PCB to indicate that the camera is on. In order to not scare the birds, I turned this one off by adding the following line to /boot/config.txt (see this <a href="https://www.raspberrypi-spy.co.uk/2013/05/how-to-disable-the-red-led-on-the-pi-camera-module/">link</a>):
+<pre class="command">
+  Disable_camera_led=1
+</pre>
+</p>
+
+<h3>IR LED</h3>
+<p>
+This camera also comes with two infrared LED lights that can be mounted on each side of the camera. Without these IR lights the pictures from the camera would still be dark. These two lights would be great in case you want to build your own security camera, however, they are quite an overkill for a birdhouse. Moreover, they actually spill some light into the visible spectrum, which you can see as a faint red light when the lights are on. In addition, they get hot and drain the battery.
+</p>
+<p>
+Instead I took an old remote control and removed the IR LED. These 5 mm LEDs are ideal for our purposes. Obviously you can also buy a new one for just a few cents. An advantage of a new LED is that you know that the longer leg is the anode. When extracting an LED from a used PCB, you do not know this anymore, however, the “flag” side is usually the cathode (see this <a href="https://core-electronics.com.au/tutorials/all-about-leds.html">link</a>). Since I am not using the standard IR LEDs, I now have two 3,3 V supply solder pads on each side of the camera to which I can connect the LED. You can use the back side of the standard IR LEDs to identify the positive and negative side or use a voltmeter.
+</p>
+<p>
+Do not connect the LED directly to the 3,3 V power lines, since you will burn your LED very quickly. These LEDs normally operate at a voltage below 2 V. Therefore the LED needs to be connected in series with a resistor. When using a 220 Ohm resistor, the voltage on the LED is 1,15 V and the current is 9,0 mA. This means that the total power dissipated by the LED and resistor is 9,0 times 1,15 equals 30 mW. This is not a lot, but keep in mind that this light is always on (as soon as the RPi is connected to power) and cannot be switch off without an additional cable from the RPi to the camera. The amount of light it produces is still more than sufficient for a birdhouse. I soldered the LED plus resistor to the solder pads on the camera board.
+</p>
+<img src="img/birdhouse/camera_with_led.jpg" alt="camera with led" />
+
+<h3>Powerbank</h3>
+<p>
+Since my birdhouse is hanging in the middle of my garden, I have not power outlet closeby. Therefore I decided to power the RPi with a powerbank. I have a powerbank with 20 Ah of capacity. It has two USB power outlets. With a USB to micro-USB cable it can easily power a Raspberry Pi. Obviously, when the RPi is close to a power outlet you can simply use a normal power supply.
+</p>
+<!-- Add how long it lasts-->
+<img src="img/birdhouse/all_components.jpg" alt="all components" />
+
+<h3>Mounting</h3>
+<p>
+I mounted the camera with the IR LED on a small wooden board, which I attached under an angle to the tilted roof of the birdhouse. From there the flex cable runs to a lunch box which seals the Raspberry Pi and powerbank from rain.
+</p>
+<img src="img/birdhouse/camera_from_inside.jpg" alt="camera from inside" />
+<img src="img/birdhouse/final_setup.jpg" width="340" alt="final setup" />
+
+<h3>Useful links</h3>
+<p>
+  <ul>
+    <li><a href="https://projects.raspberrypi.org/en/projects/infrared-bird-box">Bird box from Raspberry Pi Projects</a></li>
+      <li><a href="https://projects.raspberrypi.org/en/projects/getting-started-with-picamera">Getting started with the Pi Camera from Raspberry Pi Projects</li>
+      <li><a href="https://www.instructables.com/Raspberry-Pi-Birdbox-Camera/">Birdbox Camera from Instructables</a> with a power-over-ethernet solution and an incredibly powerful IR led lamp.</li>
+    <li><a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a></li>
+    </ul>
+    </p>
+
+<p>
+&nbsp;
+</p>
+
+  </div>
+</body>
+</html>
