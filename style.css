@@ -107,6 +107,17 @@ body * {
   margin: 5px;
 }
 
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*.boxes:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+
 .box-item {
   background-color: white;
   float: left;
@@ -114,12 +125,6 @@ body * {
   padding: 10px; 
   max-width: 350px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.boxes:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .box-item:hover {
