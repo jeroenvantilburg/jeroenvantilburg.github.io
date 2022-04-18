@@ -109,6 +109,7 @@ body * {
 
 .boxes {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
@@ -129,7 +130,6 @@ body * {
 
 .box-item:hover {
   cursor: pointer;
-  padding: 9px; 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
