@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ontouchstart lang="nl"> <!-- ontouchstart needed for iOS -->
+<head>
+  <title>Jeroen van Tilburg</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jeroen van Tilburg"/>
+  <link rel="canonical" href="https://jeroenvantilburg.nl/"/>
+  <meta property="og:url" content="https://jeroenvantilburg.nl/"/>
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen,projection" />
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d6bb3">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#eeeeee">
+</head>
+
+<body>  
+  <div class="sidebar">
+    <div class="header">
+      <div class="logo"><img src="mstile-70x70.png" alt="logo"></img></div>
+      <div class="title">Jeroen van Tilburg</div>
+      <div class="menu"><i class="fa fa-bars"></i></div>    
+    </div>
+      
+    <div class="links">
+      <a href="about.html">Over</a>
+      <a href="index.html">Web apps</a>
+      <div class="social">
+        <img src="img/pasfoto_rect.png" class="picture" alt="pasfoto"/></img>
+        <a href="https://www.facebook.com/jeroen.vantilburg.52">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jeroen-van-tilburg-8b087870">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCV_uv8iWk3WvKNbIuCN1g2g">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://github.com/jeroenvantilburg">
+          <i class="fa fa-github"></i>
+        </a>
+        <a onclick="envelope()" href="#" id="mail">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function envelope() {
+      let name = "smackjvantilburgsmack"; // add salt
+      name = name.substr(5,11); // remove salt
+      let domain = "gmail.com";
+      document.getElementById("mail").setAttribute("href","mailto:"+ name + "@"+ domain);
+      return false;
+    }  
+  </script>
+  <script data-goatcounter="https://jeroenvantilburg.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>  
+
+<!-- ABOVE THIS LINE IS COPIED FROM index.html WITH buildPages.py. DO NOT MODIFY ABOVE THIS LINE -->
+  
+  <div class="content">  
+    <h1>Birdhouse webcam project 2</h1>
+    <p>
+        
+    <h3>Hardware used</h3>
+    <p>
+    <ul>
+      <li><a href="https://www.tinytronics.nl/shop/en/development-boards/microcontroller-boards/with-wi-fi/esp32-cam-wifi-and-bluetooth-board-with-ov2640-camera">ESP32-CAM</a></li>
+      <li><a href="https://nl.aliexpress.com/item/1005002947160929.html">OV2640 camera 160 degree night vision</a></li>
+      <li><a href="https://www.tinytronics.nl/shop/en/power/batteries/18650/lg-18650-li-ion-battery-3400mah-10a-inr18650-mj1">18650 Li-ion battery</a></li> 
+      <li><a href="https://www.tinytronics.nl/shop/en/power/battery-holders-and-clips/18650/1x-18650-battery-holder-leaf-spring-contacts-wires-per-cell">18650 battery holder</a></li>
+      <li><a href="https://www.tinytronics.nl/shop/en/power/voltage-converters/buck-boost-(step-up-down)-converters/dc-dc-step-up-down-buck-boost-converter-0.6a-3.3v-output">3.3V buck-boost regulator</a></li>
+      <li><a href="https://www.tinytronics.nl/shop/en/power/bms-and-chargers/bms/li-ionli-po-protection-circuit-1s">Li-ion protection circuit 1S</a></li>
+      <li><a href="https://www.tinytronics.nl/shop/en/components/leds/leds/ir-led-940nm-5mm-bright">IR led</a>
+      <li>Two 220 Ohm resistors
+      <li>Wires and DuPont connectors</li>
+      <li>Some kind of server (see this link). I used the Raspberry Pi from <a href="birdhouse1.html">Project 1</a>.</li>
+    </ul>
+    And of course a birdhouse ;-)
+    </p>
+<h3>Tools</h3>
+<p>
+    <ul>
+      <li>Soldering tools</li>
+      <li>Something to program the ESP32. See this link.</a>
+      <li>Computer or laptop.</li>
+      <li>Something to charge the lithium battery. For instance this <a href="https://www.tinytronics.nl/shop/en/18650-battery-module-v3-charging-and-powering">one</a>.</li>
+      <li>Soldering iron, screws, screw drivers, knife, etc.</li>
+    </ul>
+</p>
+    
+<h3>Power considerations</h3>
+<p>
+It is not easy to create a long-lasting solution that runs on batteries. Since a wifi connection easily consumes more than 100 mA, any solution with a constant wifi connection will not work. A nice feature of the ESP32 is that it has a deep-sleep mode. In this way I can setup the project such that it takes a picture, say, every 30 minutes, sends it to a server and then go into deep sleep. The deep-sleep mode should consume a few micro-amps only, but the ESP32-CAM is <a href="https://time4ee.com/articles.php?article_id=126">not built that efficient</a>. Standard power banks are not suited for low-current projects and they is terribly inefficient. Internally they boost the voltage from their 4.2V lithium power cells to 5V, and then the first thing the ESP32 does it regulate it down to 3.3V. For this reason I decided to go for the lithium-ion battery with 3.3V regulator. This setup runs for about 10 days.
+</p>
+
+<h3>Prepare the power from Li-ion battery</h3>
+<p>
+<img src="img/birdhouse/battery_with_protection_and_regulator.jpg" width="150" align="right" alt="battery with protection and regulator"/>
+Lithium-ion batteries should not be discharged below 2.9V or so. To prevent this, I soldered a Li-ion protection circuit directly to the battery. From there I connected the regulator with DuPont connectors such that it brings to voltage to a constant 3.3V.
+</p>
+
+<h3>Prepare and connect the camera</h3>
+<p>
+<img src="img/birdhouse/OV2640_camera.jpg" alt="camera" width="200" align="right"/>
+The standard camera that comes with the EPS32-cam works fine, but it has an IR filter. I tried to remove the glue to open the camera but failed. Therefore I bought the 160 degree OV2640 module (see link above) with night vision. When it finally arrived I discovered that it was not with night vision at all. Fortunately, this camera was much easier to open. I carefully removed the glue and with a sharp knive. As soon as I could turn it, I removed the lens such that you can see the naked sensor. The IR filter is glued to the lens (middle in the picture below). I scratched away the glue on the IR filter and removed it.
+</p>
+<img src="img/birdhouse/OV2640_opened.jpg" alt="opened camera"/>
+
+<h3>IR LED and housing</h3>
+<p>
+I used a 5mm LED in series with two parallel 220 Ohm resistors and soldered this to the GPIO2 and GND pins of the ESP32-CAM. The IR LED flashes whenever a picture is taken. I soldered long wires (about a meter) to the GND and 3.3V pins on the other side. Then I used a PE AAA battery packages as a housing for the ESP32-CAM and made holes for the LED and the lens. I mounted the whole thing to the ceiling of the birdhouse. Below are some pictures of the final setup.
+</p>
+<img src="img/birdhouse/ESP32_mounted.jpg" width="200" alt="ESP32-CAM mounted" />
+<img src="img/birdhouse/birdhouse_with_camera.jpg" width="200" alt="birdhouse with camera" />
+<img src="img/birdhouse/birdhouse_and_battery.jpg" width="200" alt="birdhouse and battery" />
+<img src="img/birdhouse/birdhouse_mounted.jpg" width="200" alt="birdhouse mounted" />
+
+
+<h3>Setup a server and programming the ESP32</h3>
+<p>
+When the ESP32 is in deep sleep I want to be able to see the pictures taken before. Therefore, the ESP32 sends the pictures via the wifi signal to a server. In my case I use a Raspberry Pi to host the server. Instructions to program the ESP32 such that it uploads pictures to a server can be found <a href="https://randomnerdtutorials.com/esp32-cam-post-image-photo-server/">here</a>. To program the ESP32, I use an <a href="https://all3dp.com/2/esp32-cam-arduino-tutorial/">arduino</a>.<br/>
+In addition, I wanted to be able to change the deep-sleep time or to switch to live mode (whenever the ESP32-CAM wakes up). For the live-mode I use the standard CameraWebServer code for the ESP32-CAM from the Arduino library. All code can be found <a href="birdhouse_code">here</a>.
+</p>
+<img src="img/birdhouse/screenshot_mainpage.png" height="200" alt="Main page" />
+<img src="img/birdhouse/screenshot_gallery.png" height="200" alt="Gallery" />
+
+<h3>Picture quality</h3>
+<p>
+The ESP32-CAM can take pictures in different resolutions. For the highest resolution (1024x768) the quality is reasonable, but not as sharp as the ones I got with my previous <a href="birdhouse1.html">project</a>. This is the first (test) picture below. In standard operation I take pictures with a low resolution (320x240) to save bandwidth and speed up the loading of the gallery. The next picture shows a great tit exploring the inside of the birdhouse. The final picture shows that the night vision works, but the resolution is not so great.
+</p>
+<img src="img/birdhouse/test_ESP32CAM.jpg" alt="test picture" />
+<img src="img/birdhouse/great_tit_inside.jpg" alt="great tit inside exploring" />
+<img src="img/birdhouse/great_tit_night.jpg" alt="great tit at night" />
+
+
+  </div>
+</body>
+</html>
