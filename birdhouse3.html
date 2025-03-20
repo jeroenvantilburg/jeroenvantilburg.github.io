@@ -67,16 +67,36 @@
 <!-- ABOVE THIS LINE IS COPIED FROM index.html WITH buildPages.py. DO NOT MODIFY ABOVE THIS LINE -->
   
   <div class="content">  
-    <h1>My birdhouse webcam projects</h1>
+    <h1>Birdhouse webcam project 3 (2025)</h1>
     <p>
-      In 2020 we had a nest of great tits in our birdhouse. Hearing little birds tweeting we could hardly resist opening the box and having a look inside. Of course we didn’t since we did not want to disturb the birds. Therefore, in 2021 I installed a webcam in our birdhouse such that we could see the little ones grow without disturbing the nest. Since there is no power outlet nearby, I need to run this webcam on batteries. In my first attempt, I used a Raspberry Pi which drained the 20 Ah battery in less than a day. In a second attempt, I replaced (almost) everything with the ESP32-cam and a lithium battery. The main advantage of the ESP32-cam is that it has a deep-sleep mode. When it is set to taking a picture once every half hour, it lasts for more than 10 days.
+        
+    <h3>Hardware used</h3>
+    <p>
+    This is almost the same as the <a href="birdhouse1.html">first project</a>. The only difference is that I could use
+    the electricity from our new garden house. So I did not need the powerbank anymore and worry about 
+    it being drained. I now leave the Raspberry Pi and the camera on all the time. Below I shortly describe the 
+    differences with the first project.
+    </p>
+<h3>Setting up the Raspberry Pi</h3>
+<p>
+  I used again the <a href="https://www.raspberrypi.org/software/operating-systems/">Raspberry Pi Imager</a> to prepare the
+  put Raspbian OS on the SD card. Note that the <a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a>
+  requires a legacy version of Raspbian (Bullseye-v11-32b or lower), since the newer versions of Raspbian do not support
+  the legacy camera software (raspimjpeg). From there you can follow the instructions on the 
+  <a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a> website.
+</p>
+    
+<h3>RPi-Cam-Web-Interface</h3>
+<p>
+  The awesome <a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a> has a motion detection setup, such
+  that it automatically records videos (or images) whenever there is activity in the birdhouse. I have set this up such that
+  during the day (and at dawn and dusk) the motion detection is on. At any time, we can always watch the live feed.
+</p>
 
-Read more about these two projects here:
-    <ul>
-      <li><a href="birdhouse1.html">Project 1</a> with Raspberry Pi and RPi camera (2021)</li>
-      <li><a href="birdhouse2.html">Project 2</a> with the ESP32-cam (2023)</li>
-      <li><a href="birdhouse3.html">Project 3</a> with Raspberry Pi and RPi camera (2025)</li>
-    </ul>
+<h3>Videos on Youtube</h3>
+<p>
+I try to regulary post some videos on my <a href="https://www.youtube.com/playlist?list=PLDKeczXx-ZVWcvN_ldOto4NvvkfaXV5qv">channel</a>.
+</p>
 
 <p>
 &nbsp;
