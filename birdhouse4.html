@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html ontouchstart lang="nl"> <!-- ontouchstart needed for iOS -->
+<head>
+  <title>Jeroen van Tilburg</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jeroen van Tilburg"/>
+  <link rel="canonical" href="https://jeroenvantilburg.nl/"/>
+  <meta property="og:url" content="https://jeroenvantilburg.nl/"/>
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen,projection" />
+  <link rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2d6bb3">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#eeeeee">
+</head>
+
+<body>  
+  <div class="sidebar">
+    <div class="header">
+      <div class="logo"><img src="mstile-70x70.png" alt="logo"></img></div>
+      <div class="title">Jeroen van Tilburg</div>
+      <div class="menu"><i class="fa fa-bars"></i></div>    
+    </div>
+      
+    <div class="links">
+      <a href="about.html">Over</a>
+      <a href="index.html">Web apps</a>
+      <div class="social">
+        <img src="img/pasfoto_rect.png" class="picture" alt="pasfoto"/></img>
+        <a href="https://www.facebook.com/jeroen.vantilburg.52">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jeroen-van-tilburg-8b087870">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCV_uv8iWk3WvKNbIuCN1g2g">
+          <i class="fa fa-youtube-play"></i>
+        </a>
+        <a href="https://github.com/jeroenvantilburg">
+          <i class="fa fa-github"></i>
+        </a>
+        <a onclick="envelope()" href="#" id="mail">
+          <i class="fa fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function envelope() {
+      let name = "smackjvantilburgsmack"; // add salt
+      name = name.substr(5,11); // remove salt
+      let domain = "gmail.com";
+      document.getElementById("mail").setAttribute("href","mailto:"+ name + "@"+ domain);
+      return false;
+    }  
+  </script>
+  <script data-goatcounter="https://jeroenvantilburg.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>  
+
+<!-- ABOVE THIS LINE IS COPIED FROM index.html WITH buildPages.py. DO NOT MODIFY ABOVE THIS LINE -->
+  
+  <div class="content">  
+    <h1>Birdhouse webcam project 4 (2026)</h1>
+    <p>
+        
+    <h3>New hardware used</h3>
+    <p>
+      I made several improvements compared to <a href="birdhouse3.html">last year</a>:
+      <ul>
+        <li>New camera: A Chinese <a target="_blank" href="https://nl.aliexpress.com/item/1005008355028479.html">clone</a> of the <a target="_blank" href="https://www.waveshare.com/RPi-IR-CUT-Camera.htm">RPi IR-CUT Camera</a></li>
+        <li>Raspberry Pi 4 Model B (instead of 2B) with a large SD-card (128 GB)</li>
+        <li>A new roof with window for the birdhouse.</li>
+        <li>An <a target="_blank" href="https://nl.aliexpress.com/item/1005006350788599.html">IP Cam</a> for the outside view.</li>
+      </ul>
+    </p>
+    <h3>IR-CUT camera</h3>
+    <p>
+      <img src="img/birdhouse/2026/OV5647_IRCUT_Camera.png" width="200" align="right"/>
+      The new camera has the same number of pixels (5M) as my previous 
+      <a target="_blank" hef="https://www.waveshare.com/product/RPi-Camera-F.htm">camera</a>, but a slightly higher field of 
+      view (95 degrees instead of 50). For a birdhouse this is of course very nice. The picture also seems to be a little clearer. 
+      The main advantage of this camera is the IR-cut feature. This means that there is a little motor inside the lens housing that 
+      can place an IR-filter in front of the sensor. With the IR-filter in place the camera is in the day mode. Without the IR-filter
+      the CCD sensor is also sensitive to near infrared light. This makes the colors slightly distorted, but it allows to view in the
+      "dark" when the scene is lit by infrared light.
+    </p>
+    <p>
+      Instead of the two IR lights that come with the camera, I soldered my own IR led to the 3,3V pads. See the picture below and
+      <a href="birdhouse1.html">project 1</a> for all the details.
+    </p>
+    <p>
+      The camera switches between day and night mode automatically based on the light that is captured by an LDR sensor. 
+      When I first tested the camera in the birdhouse, the picture from the camera was too dark. Apparently, the day/night switching
+      point was not calibrated for the camera's sensitivity to light. The switching is done completely by hardware and there is no
+      screw to calibrate the switching point. Therefore, I put some black electrical tape around the LDR housing and squeezed the
+      adhesive sides at the top such that it creates a light funnel. By making the opening smaller (or wider) I could calibrate
+      the IR-cut system such that it switches at the right moment.<p></p>
+      <img src="img/birdhouse/2026/camera_closeup1.jpg" width="200"/>
+      <img src="img/birdhouse/2026/camera_closeup2.jpg" width="200"/>
+    </p>
+    <p>
+      Relying on tape to switch between day and night mode did not make me comfortable at all. This is why 
+      I made a backup solution. Fortunately, the camera module has an extra connector through-hole that can be connected to 
+      a RPi GPIO. When you set the GPIO to high (3,3V), it forces the night mode. When you set it to low (ground) it forces
+      the day mode. And by leaving the GPIO floating (input mode), you go back to the automatic switching.
+      In the picture below you can see the blue wire that I soldered to the through-hole.<br/>
+      Maybe worth noting, is that there is also the option to unplug the JST connector that comes from the IR-cut motor.
+      When doing this the filter will remain in its current state, either day or night mode.<p></p>
+      <img src="img/birdhouse/2026/soldering_IRCut_control_pin.jpg" width="200"/>
+    </p>
+    
+    <h3>Roof</h3>
+    <p>
+      The day mode only makes sense when there is sufficient light into the birdhouse. Therefore I cut out
+      a 9 cm by 7 cm window in the roof and put a piece of a plastic milk can in front. See the pictures below.<p></p>
+      <img src="img/birdhouse/2026/birdhouse_roof.jpg" width="200"/>
+      <img src="img/birdhouse/2026/birdhouse_window.jpg" width="200"/>
+      <img src="img/birdhouse/2026/roof_with_camera.jpg" width="200"/>
+      <img src="img/birdhouse/2026/roof_closeup.jpg" width="200"></img>
+      <img src="img/birdhouse/2026/birdhouse_inside.jpg" width="200"/>
+      <img src="img/birdhouse/2026/birdhouse_installed.jpg" width="200"/>
+    </p>
+    
+    <h3>Raspberry Pi 4</h3>
+    <p>
+      The setup is the same as last year. In particular, it still needs a legacy Raspbian (Bullseye-v11-32b) when using
+      the <a href="https://elinux.org/RPi-Cam-Web-Interface">RPi-Cam-Web-Interface</a>. I made some small
+      modifications to it (see below). I now use a 128 GB SD card, such that it can now store probably more than 2 weeks of motion-detected video.
+    </p>    
+    
+    <h3>Software</h3>
+    <p>
+      For controlling the IR-cut I wrote three small python scripts (day/night/auto). They can be directly called
+      from the RPi Cam Web Interface with buttons. You need to set the scripts to have to correct ownership and
+      access rights to work via the web. More tricky is the fact that you need to grant access to the web-user to
+      modify the GPIO pins:
+      <pre class="command">sudo usermod -a -G gpio www-data</pre>
+    </p>
+    <p>
+      I also added the possibility to stream the live-feed to YouTube. So everybody is now able
+      to see the live stream. I found the streaming command on the RPi Web Interface forum 
+      (<a href="https://forums.raspberrypi.com/search.php?keywords=rtmp&t=63276&sf=msgonly">link</a>). 
+      The downside of this stream is that there is a 30 second delay and the quality is poor.
+      You can find the changes I made to the software on my
+      <a href="https://github.com/jeroenvantilburg/RPi_Cam_Web_Interface_Mirror">GitHub mirror</a> page.
+    </p>
+    
+    <h3>Outside camera</h3>
+    <p>
+      I tested another option for a birdhouse camera, which I found 
+      <a target="_blank" href="https://nl.aliexpress.com/item/1005006350788599.html">here</a>.
+      It's an IP camera in a nice green housing with many IR leds and an IR-cut lens. The main advantages
+      are that it has audio, a larger field of view and a nice mobile app.
+      The bad thing is that the camera is slightly more massive, that the desktop app and web interface 
+      are not so great and it is more cumbersome to go through all recordings. 
+      For this reason I now use this camera as the outside cam. Also worth noting is that this 
+      camera poses several security risks (<a href="https://youtu.be/Z_gKEF76oMM?si=IJO1zgiVi405uF5s">link1</a>, 
+      <a href="https://www.mauritsvanaltvorst.com/rce-insecure-ip-camera">link2</a>).
+    <p></p>
+      <img src="img/birdhouse/2026/IPCam.png" width="200"/>
+      <img src="img/birdhouse/2026/both_cameras.jpg" width="200"/>
+    </p>
+    
+    <h3>Videos on Youtube</h3>
+    <p>
+      You can watch the <a target="_blank" href="https://www.youtube.com/@jvantilburg/live">live feed</a>
+      and all <a target="_blank" href="https://www.youtube.com/playlist?list=PLDKeczXx-ZVVcCttcSK2yu8bjaafzWFKl">highlights and compilations</a> on my channel. 
+      At the moment (February 2026) there are no birds yet.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+  </div>
+</body>
+</html>
