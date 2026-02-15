@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mijn Vogelhuisje</title>
+    <title>Mijn Vogelhuisje in 2026</title>
     <style>
         /* Basisinstellingen */
         :root {
@@ -42,8 +42,9 @@
             font-style: italic;
         }
 
+        /* Container is nu minder breed (950px in plaats van 1200px) */
         .container {
-            max-width: 1200px;
+            max-width: 950px; 
             margin: 2rem auto;
             padding: 0 1rem;
             display: flex;
@@ -51,12 +52,23 @@
             gap: 2rem;
         }
 
-        .video-sectie {
-            flex: 2 1 600px;
+        /* Nieuws sectie (Linkerkolom) is nu de BREDERE kolom */
+        .nieuws-sectie {
+            flex: 2 1 500px;
             background: var(--wit);
             padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Video sectie (Rechterkolom) is nu de SMALLERE kolom */
+        .video-sectie {
+            flex: 1 1 300px;
+            background: var(--wit);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            align-self: flex-start; /* Zorgt dat dit witte blok niet onnodig lang wordt als de nieuwskolom groeit */
         }
 
         .video-sectie h2, .nieuws-sectie h2 {
@@ -72,20 +84,13 @@
             background-color: #000;
             border-radius: 8px;
             overflow: hidden;
+            margin-bottom: 1rem;
         }
 
         .video-container iframe {
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        .nieuws-sectie {
-            flex: 1 1 350px;
-            background: var(--wit);
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         .nieuws-item {
@@ -120,12 +125,10 @@
             margin: 0;
         }
 
-        /* Nieuw: Stijl voor oude berichten die we verbergen */
         .oude-post {
             display: none; 
         }
 
-        /* Nieuw: Stijl voor de laad-meer knop */
         .laad-meer-knop {
             background-color: var(--groen-licht);
             color: var(--wit);
@@ -144,6 +147,39 @@
             background-color: var(--groen-donker);
         }
 
+        .actie-knoppen {
+            display: flex;
+            flex-direction: column; /* Knoppen staan nu onder elkaar in de smalle kolom */
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .actie-knop {
+            display: block;
+            background-color: var(--groen-donker);
+            color: var(--wit);
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .actie-knop:hover {
+            background-color: var(--groen-licht);
+        }
+
+        .actie-knop.inactief {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+        
+        .actie-knop.inactief:hover {
+            background-color: #cccccc;
+        }
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -157,54 +193,68 @@
 <body>
 
     <header>
-        <h1>Mijn Vogelhuisje</h1>
+        <h1>Mijn Vogelhuisje in 2026</h1>
         <p>Kijk live mee naar het nestelen, broeden en uitvliegen!</p>
     </header>
 
     <div class="container">
         
-        <main class="video-sectie">
-            <h2>Live Camera / Laatste Video</h2>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/live_stream?channel=UCV_uv8iWk3WvKNbIuCN1g2g?autoplay=1&mute=1" 
-                        title="Vogelhuisje Video" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-            <p><strong>Welkom bij de cam!</strong> Zodra er activiteit is, zal ik de video hierboven updaten.</p>
-        </main>
-
         <aside class="nieuws-sectie">
             <h2>Laatste Updates</h2>
 
             <article class="nieuws-item">
                 <span class="datum">15 februari 2026</span>
                 <h3>De eerste inspectie!</h3>
-                <p>Vanochtend zagen we een koolmeesje heel kort even naar binnen gluren. Zouden ze dit jaar ons huisje kiezen?</p>
+                <p>Vanochtend zagen we een koolmeesjespaar samen naar binnen gaan. Zouden ze dit jaar ons huisje kiezen?</p>
                 <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/kGV2Cm6J00g?si=UEZNAdEOkUrFvs1M" 
-                        title="Eerste kennismaking" 
+                <iframe src="https://www.youtube.com/embed/3Hb_bau9W7E?si=iIfPFO8oI7BmCc74?autoplay=1&mute=1" 
+                        title="Vogelhuisje Video" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen>
                 </iframe>
+                </div>
             </article>
 
-            <article class="nieuws-item oude-post">
+            <article class="nieuws-item">
                 <span class="datum">10 februari 2026</span>
+                <h3>Pimpelmezen!</h3>
+                <p>Vandaag kwamen twee pimpelmeesjes langs. Eentje ging zelfs even naar binnen!</p>
+                <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/kGV2Cm6J00g?si=_q5rmXE1MnhoHznk?autoplay=1&mute=1" 
+                        title="Vogelhuisje Video" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+                </div>
+            </article>
+            
+            <article class="nieuws-item">
+                <span class="datum">6 februari 2026</span>
                 <h3>De camera is geïnstalleerd</h3>
-                <p>Het was even klussen, maar de camera hangt en de livestream via YouTube werkt. Laat de lente maar beginnen!</p>
+                <p>Het was even klussen, maar de camera's hangen en de livestream via YouTube werkt. Laat de lente maar beginnen!</p>
+                <img src="../img/birdhouse/2026/both_cameras.jpg" width="300"/>
             </article>
             
             <article class="nieuws-item oude-post">
-                <span class="datum">8 februari 2026</span>
+                <span class="datum">2 februari 2026</span>
                 <h3>Huisje schoongemaakt</h3>
                 <p>Vandaag heb ik het vogelhuisje helemaal leeggehaald en schoongeschrobd, klaar voor de nieuwe bewoners.</p>
             </article>
 
             <button id="laadMeerKnop" class="laad-meer-knop">Laad oude nieuwsberichten</button>
-
         </aside>
+
+        <main class="video-sectie">
+            <h2>Links</h2>
+            
+            <div class="actie-knoppen">
+                <!--a href="https://www.youtube.com/@jvantilburg/live" class="actie-knop inactief">🔴 Live Stream (Binnenkort)</a-->
+                <a href="https://www.youtube.com/@jvantilburg/live" class="actie-knop">🔴 Live Stream</a>
+                <a href="https://www.youtube.com/playlist?list=PLDKeczXx-ZVVcCttcSK2yu8bjaafzWFKl" class="actie-knop">▶️ Playlist 2026</a>
+                <a href="https://www.youtube.com/playlist?list=PLDKeczXx-ZVWcvN_ldOto4NvvkfaXV5qv" class="actie-knop">▶️ Playlist 2025</a>                
+                <a href="../birdhouse.html" class="actie-knop">⚙️ Techniek & Foto's</a>
+            </div>
+        </main>
 
     </div>
 
@@ -220,15 +270,14 @@
         knop.addEventListener('click', function() {
             oudePosts.forEach(post => {
                 if (isVerborgen) {
-                    post.style.display = 'block'; // Laat ze zien
+                    post.style.display = 'block';
                 } else {
-                    post.style.display = 'none';  // Verberg ze weer
+                    post.style.display = 'none';
                 }
             });
             
             isVerborgen = !isVerborgen;
             
-            // Verander de tekst op de knop
             if (isVerborgen) {
                 knop.textContent = 'Laad oude nieuwsberichten';
             } else {
