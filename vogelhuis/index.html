@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Vogelhuisje</title>
+    <style>
+        /* Basisinstellingen */
+        :root {
+            --groen-donker: #2e5c31;
+            --groen-licht: #4a7c59;
+            --achtergrond: #f4f7f4;
+            --tekst: #333333;
+            --wit: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--achtergrond);
+            color: var(--tekst);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--groen-donker);
+            color: var(--wit);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .video-sectie {
+            flex: 2 1 600px;
+            background: var(--wit);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .video-sectie h2, .nieuws-sectie h2 {
+            color: var(--groen-donker);
+            margin-top: 0;
+            border-bottom: 2px solid var(--groen-licht);
+            padding-bottom: 0.5rem;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .nieuws-sectie {
+            flex: 1 1 350px;
+            background: var(--wit);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .nieuws-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .nieuws-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .datum {
+            display: inline-block;
+            background-color: var(--groen-licht);
+            color: var(--wit);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .nieuws-item h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .nieuws-item p {
+            margin: 0;
+        }
+
+        /* Nieuw: Stijl voor oude berichten die we verbergen */
+        .oude-post {
+            display: none; 
+        }
+
+        /* Nieuw: Stijl voor de laad-meer knop */
+        .laad-meer-knop {
+            background-color: var(--groen-licht);
+            color: var(--wit);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .laad-meer-knop:hover {
+            background-color: var(--groen-donker);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background-color: #e2e8e2;
+            color: #555;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mijn Vogelhuisje</h1>
+        <p>Kijk live mee naar het nestelen, broeden en uitvliegen!</p>
+    </header>
+
+    <div class="container">
+        
+        <main class="video-sectie">
+            <h2>Live Camera / Laatste Video</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/live_stream?channel=UCV_uv8iWk3WvKNbIuCN1g2g?autoplay=1&mute=1" 
+                        title="Vogelhuisje Video" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <p><strong>Welkom bij de cam!</strong> Zodra er activiteit is, zal ik de video hierboven updaten.</p>
+        </main>
+
+        <aside class="nieuws-sectie">
+            <h2>Laatste Updates</h2>
+
+            <article class="nieuws-item">
+                <span class="datum">15 februari 2026</span>
+                <h3>De eerste inspectie!</h3>
+                <p>Vanochtend zagen we een koolmeesje heel kort even naar binnen gluren. Zouden ze dit jaar ons huisje kiezen?</p>
+                <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/kGV2Cm6J00g?si=UEZNAdEOkUrFvs1M" 
+                        title="Eerste kennismaking" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </article>
+
+            <article class="nieuws-item oude-post">
+                <span class="datum">10 februari 2026</span>
+                <h3>De camera is geïnstalleerd</h3>
+                <p>Het was even klussen, maar de camera hangt en de livestream via YouTube werkt. Laat de lente maar beginnen!</p>
+            </article>
+            
+            <article class="nieuws-item oude-post">
+                <span class="datum">8 februari 2026</span>
+                <h3>Huisje schoongemaakt</h3>
+                <p>Vandaag heb ik het vogelhuisje helemaal leeggehaald en schoongeschrobd, klaar voor de nieuwe bewoners.</p>
+            </article>
+
+            <button id="laadMeerKnop" class="laad-meer-knop">Laad oude nieuwsberichten</button>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Mijn Vogelhuisje Project. Met liefde gemaakt voor de vogels.
+    </footer>
+
+    <script>
+        const knop = document.getElementById('laadMeerKnop');
+        const oudePosts = document.querySelectorAll('.oude-post');
+        let isVerborgen = true;
+
+        knop.addEventListener('click', function() {
+            oudePosts.forEach(post => {
+                if (isVerborgen) {
+                    post.style.display = 'block'; // Laat ze zien
+                } else {
+                    post.style.display = 'none';  // Verberg ze weer
+                }
+            });
+            
+            isVerborgen = !isVerborgen;
+            
+            // Verander de tekst op de knop
+            if (isVerborgen) {
+                knop.textContent = 'Laad oude nieuwsberichten';
+            } else {
+                knop.textContent = 'Verberg oude nieuwsberichten';
+            }
+        });
+    </script>
+
+</body>
+</html>
