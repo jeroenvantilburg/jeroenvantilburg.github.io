@@ -1,0 +1,192 @@
+        /* Basisinstellingen */
+        :root {
+            --groen-donker: #2e5c31;
+            --groen-licht: #4a7c59;
+            --achtergrond: #f4f7f4;
+            --tekst: #333333;
+            --wit: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--achtergrond);
+            color: var(--tekst);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--groen-donker);
+            color: var(--wit);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Container is nu minder breed (950px in plaats van 1200px) */
+        .container {
+            max-width: 950px; 
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        /* Nieuws sectie (Linkerkolom) is de BREDERE kolom */
+        .nieuws-sectie {
+            flex: 2 1 415px;
+            background: var(--wit);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Links sectie (Rechterkolom) is de SMALLERE kolom */
+        .links-sectie {
+            flex: 1 1 185px;
+            background: var(--wit);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            align-self: flex-start; /* Zorgt dat dit witte blok niet onnodig lang wordt als de nieuwskolom groeit */
+        }
+
+        .links-sectie h2, .nieuws-sectie h2 {
+            color: var(--groen-donker);
+            margin-top: 0;
+            border-bottom: 2px solid var(--groen-licht);
+            padding-bottom: 0.5rem;
+        }
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .nieuws-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px dashed #cccccc;
+        }
+
+        .nieuws-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .datum {
+            display: inline-block;
+            background-color: var(--groen-licht);
+            color: var(--wit);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .nieuws-item h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .nieuws-item p {
+            margin: 0;
+        }
+
+        .oude-post {
+            display: none; 
+        }
+
+        .laad-meer-knop {
+            background-color: var(--groen-licht);
+            color: var(--wit);
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .laad-meer-knop:hover {
+            background-color: var(--groen-donker);
+        }
+
+        .actie-knoppen {
+            display: flex;
+            flex-direction: column; /* Knoppen staan nu onder elkaar in de smalle kolom */
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .actie-knop {
+            display: block;
+            background-color: var(--groen-donker);
+            color: var(--wit);
+            padding: 0.8rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .actie-knop:hover {
+            background-color: var(--groen-licht);
+        }
+
+        .actie-knop.inactief {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+        }
+        
+        .actie-knop.inactief:hover {
+            background-color: #cccccc;
+        }
+
+        /* Stijl voor foto's in nieuwsberichten */
+        .nieuws-foto {
+            width: 100%;
+            height: auto;
+            border-radius: 8px; /* Zorgt voor zachte, ronde hoekjes net als je video */
+            margin: 0.5rem 0 1rem 0; /* Zorgt voor een beetje ademruimte rondom de foto */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5); /* Een subtiel schaduwtje */
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background-color: #e2e8e2;
+            color: #555;
+            font-size: 0.9rem;
+        }
